@@ -4,46 +4,51 @@ import TutorialDataService from "../services/tutorial.service";
 export default class AddTutorial extends Component {
   constructor(props) {
     super(props);
-    this.onChangeTitle = this.onChangeTitle.bind(this);
-    this.onChangeDescription = this.onChangeDescription.bind(this);
+    this.onChangeCedula = this.onChangeCedula.bind(this);
+    this.onChangeNombre = this.onChangeNombre.bind(this);
+    this.onChangeEdad = this.onChangeEdad.bind(this);
     this.saveTutorial = this.saveTutorial.bind(this);
     this.newTutorial = this.newTutorial.bind(this);
 
     this.state = {
-      id: null,
-      title: "",
-      description: "", 
-      published: false,
-
-      submitted: false
+      cedula: "",
+      nombre: "", 
+      edad: ""
     };
   }
 
-  onChangeTitle(e) {
+  onChangeCedula(e) {
     this.setState({
-      title: e.target.value
+      cedula: e.target.value
     });
   }
 
-  onChangeDescription(e) {
+  onChangeNombre(e) {
     this.setState({
-      description: e.target.value
+      nombre: e.target.value
+    });
+  }
+
+  onChangeEdad(e) {
+    this.setState({
+      edad: e.target.value
     });
   }
 
   saveTutorial() {
     var data = {
-      title: this.state.title,
-      description: this.state.description
+      cedula: this.state.cedula,
+      nombre: this.state.nombre,
+      edad: this.state.edad
     };
 
     TutorialDataService.create(data)
       .then(response => {
         this.setState({
-          id: response.data.id,
-          title: response.data.title,
-          description: response.data.description,
-          published: response.data.published,
+          cedula: response.data.cedula,
+          nombre: response.data.nombre,
+          edad: response.data.edad,
+          
 
           submitted: true
         });
@@ -56,10 +61,10 @@ export default class AddTutorial extends Component {
 
   newTutorial() {
     this.setState({
-      id: null,
-      title: "",
-      description: "",
-      published: false,
+      cedula: "",
+      nombre: "",
+      edad: "",
+      
 
       submitted: false
     });
@@ -78,28 +83,41 @@ export default class AddTutorial extends Component {
           ) : (
             <div>
               <div className="form-group">
-                <label htmlFor="title">Title</label>
+                <label htmlFor="cedula">Cedula</label>
                 <input
                   type="text"
                   className="form-control"
-                  id="title"
+                  id="cedula"
                   required
-                  value={this.state.title}
-                  onChange={this.onChangeTitle}
-                  name="title"
+                  value={this.state.cedula}
+                  onChange={this.onChangeCedula}
+                  name="cedula"
                 />
               </div>
   
               <div className="form-group">
-                <label htmlFor="description">Description</label>
+                <label htmlFor="nombre">Nombre</label>
                 <input
                   type="text"
                   className="form-control"
-                  id="description"
+                  id="nombre"
                   required
-                  value={this.state.description}
-                  onChange={this.onChangeDescription}
-                  name="description"
+                  value={this.state.nombre}
+                  onChange={this.onChangeNombre}
+                  name="nombre"
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="edad">Edad</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="edad"
+                  required
+                  value={this.state.edad}
+                  onChange={this.onChangeEdad}
+                  name="edad"
                 />
               </div>
   
