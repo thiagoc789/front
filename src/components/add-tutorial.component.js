@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 import TutorialDataService from "../services/tutorial.service";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -10,6 +11,8 @@ export default class AddTutorial extends Component {
     this.onChangeNombre = this.onChangeNombre.bind(this);
     this.onChangeEdad = this.onChangeEdad.bind(this);
     this.onChangeSexo = this.onChangeSexo.bind(this);
+    this.onChangeCiudad = this.onChangeCiudad.bind(this);
+    this.onChangeTelefono = this.onChangeTelefono.bind(this);
     this.saveTutorial = this.saveTutorial.bind(this);
     this.newTutorial = this.newTutorial.bind(this);
 
@@ -17,7 +20,9 @@ export default class AddTutorial extends Component {
       cedula: "",
       nombre: "",
       edad: "",
-      sexo: ""
+      sexo: "",
+      ciudad: "",
+      telefono: ""
     };
   }
 
@@ -45,12 +50,26 @@ export default class AddTutorial extends Component {
     });
   }
 
+  onChangeCiudad(e) {
+    this.setState({
+      ciudad: e.target.value
+    });
+  }
+
+  onChangeTelefono(e) {
+    this.setState({
+      telefono: e.target.value
+    });
+  }
+
   saveTutorial() {
     var data = {
       cedula: this.state.cedula,
       nombre: this.state.nombre,
       edad: this.state.edad,
-      sexo: this.state.sexo
+      sexo: this.state.sexo,
+      ciudad: this.state.ciudad,
+      telefono: this.state.telefono,
     };
 
     TutorialDataService.create(data)
@@ -60,6 +79,8 @@ export default class AddTutorial extends Component {
           nombre: response.data.nombre,
           edad: response.data.edad,
           sexo: response.data.sexo,
+          ciudad: response.data.ciudad,
+          telefono: response.data.telefono,
 
 
           submitted: true
@@ -77,6 +98,8 @@ export default class AddTutorial extends Component {
       nombre: "",
       edad: "",
       sexo: "",
+      ciudad: "",
+      telefono: "",
 
 
       submitted: false
@@ -88,14 +111,14 @@ export default class AddTutorial extends Component {
       <div className="submit-form">
         {this.state.submitted ? (
           <div>
-            
+
             <h4>Enviado Correctamente</h4>
             <button className="btn btn-success" onClick={this.newTutorial}>
               Crear Nueva Encuesta
             </button>
           </div>
         ) : (
-          
+
           <div>
             <h3 class="text-hide">Encuesta De Caracterización</h3>
             <div className="form-group">
@@ -158,8 +181,34 @@ export default class AddTutorial extends Component {
                 />
                 Femenino
               </label>
+              </div>
 
+              <div className="form-group">
+              <label htmlFor="ciudad">Ciudad</label>
+              <input
+                type="text"
+                className="form-control"
+                id="ciudad"
+                required
+                value={this.state.ciudad}
+                onChange={this.onChangeCiudad}
+                name="ciudad"
+              />
             </div>
+
+            <div className="form-group">
+              <label htmlFor="telefono">Telefono</label>
+              <input
+                type="text"
+                className="form-control"
+                id="telefono"
+                required
+                value={this.state.telefono}
+                onChange={this.onChangeTelefono}
+                name="telefono"
+              />
+            </div>
+            
 
             <button onClick={this.saveTutorial} className="btn btn-success">
               Submit

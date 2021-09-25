@@ -1,11 +1,11 @@
 .list {
-  text-align: left;
+  text-align: center;
   max-width: 750px;
   margin: auto;
 }
 
 .submit-form {
-  max-width: 300px;
+  max-width: 500px;
   margin: auto;
 }
 
