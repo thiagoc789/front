@@ -5,6 +5,7 @@ import "./App.css";
 
 
 import AddTutorial from "./components/add-tutorial.component";
+import SegundaPagina from "./components/segundaPagina.component";
 
 
 class App extends Component {
@@ -31,13 +32,14 @@ class App extends Component {
 
           ¡No te preocupes!
           Tus datos no serán compartidos con terceros, el fin de la encuesta es netamente académico😄.</h6>
-        <a href="/add" >
+        <a href="/segundaPagina" >
           <button type="button" class="btn btn-primary btn-lg">Empezar Encuesta</button>
         </a>
 
 
         <Switch>
           <Route exact path="/add" component={AddTutorial} />
+          <Route exact path="/segundaPagina" component={SegundaPagina} />
         </Switch>
 
       </div>

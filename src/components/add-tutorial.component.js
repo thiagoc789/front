@@ -121,9 +121,6 @@ export default class AddTutorial extends Component {
       <div className="submit-form">
         {this.state.submitted ? (
           <div>
-
-            <h4>Enviado Correctamente</h4>
-
           </div>
         ) : (
 
