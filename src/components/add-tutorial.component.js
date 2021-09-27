@@ -2,9 +2,15 @@
 import React, { Component } from "react";
 import TutorialDataService from "../services/tutorial.service";
 import "bootstrap/dist/css/bootstrap.min.css";
+import {Route } from "react-router-dom";
+import SegundaPagina from "./segundaPagina.component";
+
+
+
 
 
 export default class AddTutorial extends Component {
+  
   constructor(props) {
     super(props);
     this.onChangeCedula = this.onChangeCedula.bind(this);
@@ -15,6 +21,7 @@ export default class AddTutorial extends Component {
     this.onChangeTelefono = this.onChangeTelefono.bind(this);
     this.saveTutorial = this.saveTutorial.bind(this);
     this.newTutorial = this.newTutorial.bind(this);
+    <Route exact path="/segundaPagina" component={SegundaPagina} />
 
     this.state = {
       cedula: "",
@@ -86,6 +93,7 @@ export default class AddTutorial extends Component {
           submitted: true
         });
         console.log(response.data);
+        window.location.href = '/segundaPagina';
       })
       .catch(e => {
         console.log(e);
@@ -107,15 +115,15 @@ export default class AddTutorial extends Component {
   }
 
   render() {
+    
     return (
+      
       <div className="submit-form">
         {this.state.submitted ? (
           <div>
 
             <h4>Enviado Correctamente</h4>
-            <button className="btn btn-success" onClick={this.newTutorial}>
-              Crear Nueva Encuesta
-            </button>
+
           </div>
         ) : (
 
@@ -209,10 +217,14 @@ export default class AddTutorial extends Component {
               />
             </div>
             
-
             <button onClick={this.saveTutorial} className="btn btn-success">
-              Submit
+              Siguiente Pagina
             </button>
+            
+
+        
+
+            
           </div>
         )}
       </div>
