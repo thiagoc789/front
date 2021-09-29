@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import TiempoDataService from "../services/tiempo.service";
 import "bootstrap/dist/css/bootstrap.min.css";
-//import {Route } from "react-router-dom";
-//import CuartaPagina from "./cuartaPagina.component";
+import {Route } from "react-router-dom";
+import QuintaPagina from "./quintaPagina.component";
 
 
 
@@ -20,7 +20,7 @@ export default class AddTutorial extends Component {
         this.onChangeEquipo = this.onChangeEquipo.bind(this);
         this.saveTutorial = this.saveTutorial.bind(this);
         this.newTutorial = this.newTutorial.bind(this);
-        //<Route exact path="/cuartaPagina" component={CuartaPagina} />
+        <Route exact path="/quintaPagina" component={QuintaPagina} />
 
         this.state = {
             tiempom: "-1",
@@ -101,7 +101,7 @@ export default class AddTutorial extends Component {
                     submitted: true
                 });
                 console.log(response.data);
-                //window.location.href = '/cuartaPagina';
+                window.location.href = '/quintaPagina';
             })
             .catch(e => {
                 console.log(e);
@@ -162,7 +162,7 @@ export default class AddTutorial extends Component {
                                 <option value="salsa">Salsa</option>
                                 <option value="vallenato">Vallenato</option>
                                 <option value="pop">Pop</option>
-                                <option value="bachata">Bachata</option>
+                                <option value="despecho">Despecho</option>
 
                             </select></h6>
 
