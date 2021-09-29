@@ -2,8 +2,8 @@
 import React, { Component } from "react";
 import GustoDataService from "../services/gusto.service";
 import "bootstrap/dist/css/bootstrap.min.css";
-//import {Route } from "react-router-dom";
-//import SegundaPagina from "./segundaPagina.component";
+import {Route } from "react-router-dom";
+import TerceraPagina from "./terceraPagina.component";
 
 
 
@@ -20,7 +20,7 @@ export default class AddTutorial extends Component {
         this.onChangeIngresos = this.onChangeIngresos.bind(this);
         this.saveTutorial = this.saveTutorial.bind(this);
         this.newTutorial = this.newTutorial.bind(this);
-        //<Route exact path="/segundaPagina" component={SegundaPagina} />
+        <Route exact path="/terceraPagina" component={TerceraPagina} />
 
         this.state = {
             estrato: "",
@@ -82,13 +82,13 @@ export default class AddTutorial extends Component {
                     hijos: response.data.hijos,
                     transporte: response.data.transporte,
                     ingresos: response.data.ingresos,
-                    mascotas: response.data.mascotas,
+                    
 
 
                     submitted: true
                 });
                 console.log(response.data);
-                //window.location.href = '/segundaPagina';
+                window.location.href = '/terceraPagina';
             })
             .catch(e => {
                 console.log(e);

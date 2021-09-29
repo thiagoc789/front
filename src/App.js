@@ -6,6 +6,8 @@ import "./App.css";
 
 import AddTutorial from "./components/add-tutorial.component";
 import SegundaPagina from "./components/segundaPagina.component";
+import TerceraPagina from "./components/terceraPagina.component";
+import CuartaPagina from "./components/cuartaPagina.component";
 
 
 class App extends Component {
@@ -40,6 +42,8 @@ class App extends Component {
         <Switch>
           <Route exact path="/add" component={AddTutorial} />
           <Route exact path="/segundaPagina" component={SegundaPagina} />
+          <Route exact path="/terceraPagina" component={TerceraPagina} />
+          <Route exact path="/cuartaPagina" component={CuartaPagina} />
         </Switch>
 
       </div>
