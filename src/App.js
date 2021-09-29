@@ -32,7 +32,7 @@ class App extends Component {
 
           ¡No te preocupes!
           Tus datos no serán compartidos con terceros, el fin de la encuesta es netamente académico😄.</h6>
-        <a href="/segundaPagina" >
+        <a href="/add" >
           <button type="button" class="btn btn-primary btn-lg">Empezar Encuesta</button>
         </a>
 

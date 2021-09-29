@@ -1,6 +1,6 @@
 
 import React, { Component } from "react";
-import TutorialDataService from "../services/tutorial.service";
+import GustoDataService from "../services/gusto.service";
 import "bootstrap/dist/css/bootstrap.min.css";
 //import {Route } from "react-router-dom";
 //import SegundaPagina from "./segundaPagina.component";
@@ -18,7 +18,6 @@ export default class AddTutorial extends Component {
         this.onChangeHijos = this.onChangeHijos.bind(this);
         this.onChangeTransporte = this.onChangeTransporte.bind(this);
         this.onChangeIngresos = this.onChangeIngresos.bind(this);
-        this.onChangeMascotas = this.onChangeMascotas.bind(this);
         this.saveTutorial = this.saveTutorial.bind(this);
         this.newTutorial = this.newTutorial.bind(this);
         //<Route exact path="/segundaPagina" component={SegundaPagina} />
@@ -28,8 +27,8 @@ export default class AddTutorial extends Component {
             escolaridad: "",
             hijos: "",
             transporte: "",
-            ingresos: "",
-            mascotas: ""
+            ingresos: ""
+            
         };
     }
 
@@ -64,11 +63,6 @@ export default class AddTutorial extends Component {
         });
     }
 
-    onChangeMascotas(e) {
-        this.setState({
-            mascotas: e.target.value
-        });
-    }
 
     saveTutorial() {
         var data = {
@@ -77,10 +71,10 @@ export default class AddTutorial extends Component {
             hijos: this.state.hijos,
             transporte: this.state.transporte,
             ingresos: this.state.ingresos,
-            mascotas: this.state.mascotas,
+            
         };
 
-        TutorialDataService.create(data)
+        GustoDataService.create(data)
             .then(response => {
                 this.setState({
                     estrato: response.data.estrato,
@@ -108,7 +102,7 @@ export default class AddTutorial extends Component {
             hijos: "",
             transporte: "",
             ingresos: "",
-            mascotas: "",
+            
 
 
             submitted: false
