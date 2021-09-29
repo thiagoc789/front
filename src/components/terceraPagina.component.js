@@ -22,11 +22,11 @@ export default class AddTutorial extends Component {
         <Route exact path="/cuartaPagina" component={CuartaPagina} />
 
         this.state = {
-            evento: "",
-            actividad: "",
-            tv: "",
-            deporte: "",
-            fisica: ""
+            evento: "concierto",
+            actividad: "trabajar",
+            tv: "musica",
+            deporte: "futbol",
+            fisica: "caminar"
             
         };
     }

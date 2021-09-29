@@ -23,11 +23,11 @@ export default class AddTutorial extends Component {
         <Route exact path="/terceraPagina" component={TerceraPagina} />
 
         this.state = {
-            estrato: "",
-            escolaridad: "",
-            hijos: "",
-            transporte: "",
-            ingresos: ""
+            estrato: "1",
+            escolaridad: "primaria",
+            hijos: "0",
+            transporte: "Carro",
+            ingresos: "-1"
             
         };
     }
