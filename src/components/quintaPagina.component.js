@@ -22,7 +22,7 @@ export default class AddTutorial extends Component {
             comida: "comida rapida",
             bebida: "aguardiente",
             tiempo_disponible: "sabado",
-            dinero: "-50mil",
+            dinero: "Menos de 50mil",
 
         };
     }
@@ -148,10 +148,10 @@ export default class AddTutorial extends Component {
                                 value={this.state.dinero}
                                 onChange={this.onChangeDinero}
                             >
-                                <option value="-50mil">Menos de 50 mil pesos</option>
-                                <option value="50mil-100mil">Entre 50 y 100 mil pesos</option>
-                                <option value="100mil-200mil">Entre 100 mil y 200mil</option>
-                                <option value="+200mil">Más de 200mil</option>
+                                <option value="Menos de 50mil">Menos de 50 mil pesos</option>
+                                <option value="Entre 50 y 100mil">Entre 50 y 100 mil pesos</option>
+                                <option value="Entre 100 y 200mil">Entre 100 mil y 200mil</option>
+                                <option value="Mas de 200mil">Más de 200mil</option>
                             
 
                             </select></h6>

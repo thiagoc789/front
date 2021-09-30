@@ -27,7 +27,7 @@ export default class AddTutorial extends Component {
             escolaridad: "primaria",
             hijos: "0",
             transporte: "Carro",
-            ingresos: "-1"
+            ingresos: "Menos de 1 SMMLV"
             
         };
     }
@@ -182,11 +182,11 @@ export default class AddTutorial extends Component {
                                 value={this.state.ingresos}
                                 onChange={this.onChangeIngresos}
                             >
-                                <option value="-1">Menos de 1 SMMLV</option>
-                                <option value="1-2">Entre 1 Y 2 SMMLV</option>
-                                <option value="2-3">Entre 2 Y 3 SMMLV</option>
-                                <option value="3-4">Entre 3 Y 4 SMMLV</option>
-                                <option value="+4">Más De 4 SMMLV</option>
+                                <option value="Menos de 1 SMMLV">Menos de 1 SMMLV</option>
+                                <option value="Entre 1 Y 2 SMMLV">Entre 1 Y 2 SMMLV</option>
+                                <option value="Entre 2 Y 3 SMMLV">Entre 2 Y 3 SMMLV</option>
+                                <option value="Entre 3 Y 4 SMMLV">Entre 3 Y 4 SMMLV</option>
+                                <option value="Más de 4 SMMLV">Más De 4 SMMLV</option>
                                 
 
 

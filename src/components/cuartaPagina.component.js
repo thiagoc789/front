@@ -23,11 +23,11 @@ export default class AddTutorial extends Component {
         <Route exact path="/quintaPagina" component={QuintaPagina} />
 
         this.state = {
-            tiempom: "-1",
+            tiempom: "Menos de 1 hora",
             generom: "rock",
-            tiempop: "-1",
+            tiempop: "Menos de 1 hora",
             generop: "accion",
-            tiempod: "-1",
+            tiempod: "Menos de 1 hora",
             equipo: "cali",
 
         };
@@ -144,11 +144,11 @@ export default class AddTutorial extends Component {
                                 value={this.state.tiempom}
                                 onChange={this.onChangeTiempom}
                             >
-                                <option value="-1">Menos de 1 hora</option>
-                                <option value="1-3">De 1 a 3 Horas</option>
-                                <option value="4-6">De 4 a 6 Horas</option>
-                                <option value="7-9">De 7 a 9 Horas</option>
-                                <option value="+9">Más de 9 Horas</option>
+                                <option value="Menos de 1 hora">Menos de 1 hora</option>
+                                <option value="Entre 1 a 3 horas">De 1 a 3 Horas</option>
+                                <option value="Entre 4 a 6 horas">De 4 a 6 Horas</option>
+                                <option value="Entre 7 a 9 horas">De 7 a 9 Horas</option>
+                                <option value="Mas de 9 horas">Más de 9 Horas</option>
                             </select></h6>
 
                         <h6 class="text-hide">¿Qué genero musical prefiere?    &nbsp; &nbsp;
@@ -171,11 +171,11 @@ export default class AddTutorial extends Component {
                                 value={this.state.tiempop}
                                 onChange={this.onChangeTiempop}
                             >
-                                <option value="-1">Menos de 1 hora</option>
-                                <option value="1-3">De 1 a 3 Horas</option>
-                                <option value="4-6">De 4 a 6 Horas</option>
-                                <option value="7-9">De 7 a 9 Horas</option>
-                                <option value="+9">Más de 9 Horas</option>
+                                <option value="Menos de 1 hora">Menos de 1 hora</option>
+                                <option value="Entre 1 a 3 horas">De 1 a 3 Horas</option>
+                                <option value="Entre 4 a 6 horas">De 4 a 6 Horas</option>
+                                <option value="Entre 7 a 9 horas">De 7 a 9 Horas</option>
+                                <option value="Mas de 9 horas">Más de 9 Horas</option>
                             </select></h6>
 
                             <h6 class="text-hide">¿Qué genero de peliculas prefiere?    &nbsp; &nbsp;
@@ -197,11 +197,11 @@ export default class AddTutorial extends Component {
                                 value={this.state.tiempod}
                                 onChange={this.onChangeTiempod}
                             >
-                                <option value="-1">Menos de 1 hora</option>
-                                <option value="1-3">De 1 a 3 Horas</option>
-                                <option value="4-6">De 4 a 6 Horas</option>
-                                <option value="7-9">De 7 a 9 Horas</option>
-                                <option value="+9">Más de 9 Horas</option>
+                                <option value="menos de 1 hora">Menos de 1 hora</option>
+                                <option value="Entre 1 a 3 horas">De 1 a 3 Horas</option>
+                                <option value="Entre 4 a 6 horas">De 4 a 6 Horas</option>
+                                <option value="Entre 7 a 9 horas">De 7 a 9 Horas</option>
+                                <option value="Mas de 9 horas">Más de 9 Horas</option>
                             </select></h6>
 
                             <h6 class="text-hide">¿Cual es su equipo de futbol favorito?     &nbsp; &nbsp;
